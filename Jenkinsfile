@@ -3,11 +3,11 @@ pipeline{
 				label"built-in"
 			}
 		stages{
-			stage('deploy index'){
+			stage('23Q1'){
 							steps{
-									sh "cp -r index.html /var/www/html/"
-									sh "chmod -R 777 /var/www/html/"
-									sh "mkdir hello"
+									sh "docker run -itdp 80:80 --name 23Q1 httpd "
+									sh "cp -r /mnt/vel-app/index.html 23Q1:/usr/local/apache2/htdocs"
+									sh "chmod -R 777 /usr/local/apache2/htdocs/index.html"
 								}
 							}
 				}
