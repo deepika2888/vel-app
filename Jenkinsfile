@@ -9,7 +9,7 @@ pipeline{
 								sh "git checkout 23Q1"
 							       // sh "docker stop 23Q1"
 							        sh "docker system prune -a -f"
-								sh "docker run -itdp 80:80 -v 23Q1:/usr/local/apache2/htdocs --name 23Q1 httpd"
+								sh "docker run -itdp 90:80 -v 23Q1:/usr/local/apache2/htdocs --name 23Q1 httpd"
 								sh "docker cp index.html 23Q1:/usr/local/apache2/htdocs"
 								sh "docker exec 23Q1 chmod -R 777 /usr/local/apache2/htdocs/index.html"
 								}
@@ -20,7 +20,7 @@ pipeline{
 								sh "git checkout 23Q2"
 							      //  sh "docker stop 23Q2"
 							        sh "docker system prune -a -f"
-								sh "docker run -itdp 90:80 -v 23Q2:/usr/local/apache2/htdocs --name 23Q2 httpd"
+								sh "docker run -itdp 91:80 -v 23Q2:/usr/local/apache2/htdocs --name 23Q2 httpd"
 								sh "docker cp index.html 23Q2:/usr/local/apache2/htdocs"
 								sh "docker exec 23Q2 chmod -R 777 /usr/local/apache2/htdocs/index.html"
 								}
