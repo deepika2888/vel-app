@@ -17,7 +17,7 @@ pipeline{
 							steps{
 								sh " cd /mnt/vel-app "
 								sh " git checkout 23Q2 "
-							        //sh "docker stop 23Q2"
+							        sh "docker stop 23Q2"
 							        sh "docker system prune -a -f"
 								sh "docker run -itdp 90:80 --name 23Q2 httpd "
 								sh "docker cp /mnt/vel-app/index.html 23Q2:/usr/local/apache2/htdocs"
