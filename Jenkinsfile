@@ -23,7 +23,7 @@ pipeline{
 								sh "docker cp /mnt/vel-app/index.html 23Q2:/usr/local/apache2/htdocs"
 								}
 							}
-			/*stage('23Q3'){
+			stage('23Q3'){
 							steps{
        								sh " cd /mnt/vel-app "
 								sh " git checkout 23Q3 "
@@ -32,6 +32,6 @@ pipeline{
 								sh "docker run -itdp 92:80 --name 23Q3 httpd "
 								sh "docker cp /mnt/vel-app/index.html 23Q3:/usr/local/apache2/htdocs"
 								}
-							}*/
+							}
 				}
 }
