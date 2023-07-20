@@ -3,7 +3,7 @@ pipeline{
 				label"built-in"
 			}
 		stages{
-			/*stage('23Q1'){
+			stage('23Q1'){
 							steps{
        								sh "cd /mnt/vel-app"
 								sh "git checkout 23Q1"
@@ -13,7 +13,7 @@ pipeline{
 								sh "docker cp index.html 23Q1:/usr/local/apache2/htdocs"
 								sh "docker exec 23Q1 chmod -R 777 /usr/local/apache2/htdocs/index.html"
 								}
-							}*/
+							}
 			stage('23Q2'){
 							steps{
 								sh "cd /mnt/vel-app"
