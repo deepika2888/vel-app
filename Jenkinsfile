@@ -1,20 +1,20 @@
 pipeline{
 		agent{
-				label"slave-1"
+				label"built-in"
 			}
 		stages{
 			stage('23Q1'){
 							steps{
        								sh "cd /mnt/vel-app"
 								sh "git checkout 23Q1"
-							        sh "sudo docker stop 23Q1"
-							        sh "sudo docker system prune -a -f"
-								sh "sudo docker run -itdp 80:80 --name 23Q1 httpd"
-								sh "sudo docker cp index.html 23Q1:/usr/local/apache2/htdocs"
-								sh "sudo docker exec 23Q1 chmod -R 777 /usr/local/apache2/htdocs/index.html"
+							        //sh "sudo docker stop 23Q1"
+							        //sh "sudo docker system prune -a -f"
+								sh "docker build -t ubuntu-httpd:1.0 ."
+								sh "docker run -itd --name 23Q1 ubuntu-httpd:1.0 bash"
+								
 								}
 							}
-			stage('23Q2'){
+			/*stage('23Q2'){
 							steps{
 								sh "cd /mnt/vel-app"
 								sh "git checkout 23Q2"
@@ -35,6 +35,6 @@ pipeline{
 								sh "sudo docker cp index.html 23Q3:/usr/local/apache2/htdocs"
 								sh "sudo docker exec 23Q3 chmod -R 777 /usr/local/apache2/htdocs/index.html"
 								}
-							}
+							}*/
 				}
 }
