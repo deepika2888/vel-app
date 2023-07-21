@@ -7,6 +7,7 @@ pipeline{
 							steps{
 							        //sh "sudo docker stop 23Q1"
 							        //sh "sudo docker system prune -a -f"
+								sh "cd /mnt"
 								sh "docker build -t ubuntu-httpd:1.0 ."
 								sh "docker run -itd --name 23Q1 ubuntu-httpd:1.0 bash"
 								sh "cd /mnt/vel-app"
