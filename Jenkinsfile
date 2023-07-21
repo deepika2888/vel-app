@@ -3,7 +3,7 @@ pipeline{
 				label"slave-1"
 			}
 		stages{
-			stage('git-install'){
+			stage('git'){
 						steps{
 								sh "git clone https://github.com/deepika2888/vel-app.git"
 							}
