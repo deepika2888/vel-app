@@ -5,7 +5,8 @@ pipeline{
 		stages{
 			stage('git'){
 						steps{
-								sh "git clone https://github.com/deepika2888/vel-app.git"
+								sh "yum install git -y
+								sh "git clone --branch * https://github.com/deepika2888/vel-app.git"
 							}
 				
 						}
