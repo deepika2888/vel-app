@@ -5,7 +5,7 @@ pipeline{
 		stages{
 			stage('git-install'){
 						steps{
-								sh "git clone --branch * https://github.com/deepika2888/vel-app.git"
+								sh "git clone https://github.com/deepika2888/vel-app.git"
 							}
 				
 						}
