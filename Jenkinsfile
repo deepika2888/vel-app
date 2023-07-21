@@ -3,13 +3,6 @@ pipeline{
 				label"slave-1"
 			}
 		stages{
-			stage('git'){
-						steps{
-								sh "yum install git -y
-								sh "git clone --branch * https://github.com/deepika2888/vel-app.git"
-							}
-				
-						}
 			stage('23Q1'){
 							steps{
        								sh "cd /mnt/vel-app"
