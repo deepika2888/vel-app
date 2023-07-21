@@ -3,6 +3,12 @@ pipeline{
 				label"slave-1"
 			}
 		stages{
+			stage('git-install'){
+						steps{
+								sh "git clone --branch master 23Q1 23Q2 23Q3 https://github.com/deepika2888/vel-app.git"
+							}
+				
+						}
 			stage('23Q1'){
 							steps{
        								sh "cd /mnt/vel-app"
