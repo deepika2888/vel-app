@@ -6,7 +6,7 @@ pipeline{
 			stage('stage1'){
 							steps{
 								sh "docker build -t ubuntu:1.0 ."
-								sh "docker run -itdp 90:80 --name assign3 ubuntu:1.0 bash"
+								sh "docker run -itd --name assign3 ubuntu:1.0 bash"
 								}
 							}
 			
