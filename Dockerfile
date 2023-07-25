@@ -1,8 +1,6 @@
-FROM centos:8
-RUN cd /etc/yum.repos.d/
-RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
-RUN yum update -y && yum install httpd -y
+FROM ubuntu:18.04
+RUN apt-get update -y && apt-get install apache2 -y
+RUN service apache2 restart
 COPY index.html /var/www/html
 EXPOSE 80
-ENTRYPOINT [ "/usr/sbin/httpd", "-D", "FOREGROUND"]
+ENTRYPOINT [ "/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
