@@ -5,14 +5,12 @@ pipeline{
 		stages{
 			stage('23Q1'){
 							steps{
-							        //sh "sudo docker stop 23Q1"
-							        //sh "sudo docker system prune -a -f"
-								sh "cd /mnt"
-								sh "docker build -t ubuntu-httpd:1.0 ."
-								sh "docker run -itd --name 23Q1 ubuntu-httpd:1.0 bash"
+							        sh "sudo docker stop 23Q1"
+							        sh "sudo docker system prune -a -f"
 								sh "cd /mnt/vel-app"
 								sh "git checkout 23Q1"
-								
+								sh "docker build -t cent:1.0 ."
+								sh "docker run -itd --name 23Q1 ubuntu-httpd:1.0 bash"
 								}
 							}
 			/*stage('23Q2'){
