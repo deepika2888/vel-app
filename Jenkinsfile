@@ -10,7 +10,7 @@ pipeline{
 								sh "cd /mnt/vel-app"
 								sh "git checkout 23Q1"
 								sh "docker build -t cent:1.0 ."
-								sh "docker run -itd --name 23Q1 ubuntu-httpd:1.0 bash"
+								sh "docker run -itd --name 23Q1 cent:1.0 bash"
 								}
 							}
 			/*stage('23Q2'){
