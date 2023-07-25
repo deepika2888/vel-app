@@ -5,8 +5,8 @@ pipeline{
 		stages{
 			stage('23Q1'){
 							steps{
-							        sh "sudo docker stop 23Q1"
-							        sh "sudo docker system prune -a -f"
+							       // sh "sudo docker stop 23Q1"
+							        //sh "sudo docker system prune -a -f"
 								sh "cd /mnt/vel-app"
 								sh "git checkout 23Q1"
 								sh "docker build -t cent:1.0 ."
